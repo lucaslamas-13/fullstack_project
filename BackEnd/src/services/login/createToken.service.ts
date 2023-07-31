@@ -25,7 +25,7 @@ const loginUsersService = async (payload: TLoginRequest) => {
   );
 
   if (!comparePassword) {
-    throw new AppError("Invalid credentials", 401);
+    throw new AppError("Invalid credentials", 403);
   }
 
   const token: string = jwt.sign(
