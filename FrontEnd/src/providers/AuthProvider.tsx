@@ -23,7 +23,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const token = localStorage.getItem("yourd-todolist:token");
+    const token = localStorage.getItem("your-contacts:token");
 
     if (!token) {
       setLoading(false);
@@ -41,7 +41,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
       const { token } = response.data;
 
       api.defaults.headers.common.Authorization = `Bearer ${token}`;
-      localStorage.setItem("yourd-todolist:token", token);
+      localStorage.setItem("your-contacts:token", token);
       setLoading(false);
 
       navigate("dashboard");

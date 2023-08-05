@@ -1,6 +1,5 @@
-import { useEffect, useState } from "react";
-import { api } from "../../services/api";
-import { useAuth } from "../../hooks/useAuth";
+import { Card } from "../../components/card";
+import {  Container } from "./style";
 
 export interface Contact {
   id: number;
@@ -10,27 +9,22 @@ export interface Contact {
   createdAt: string;
 }
 
-const Dashboard = () => {
-  const [contacts, setContacts] = useState<Contact[]>([]);
-  const {loading} = useAuth()
-
-  useEffect(() => {
-    (async () => {
-      const response = await api.get<Contact[]>("/contacts");
-
-      setContacts(response.data);
-    })();
-  }, []);
+export const Dashboard = () => {
+  
+  
   return (
     <>
-      <h1>Dashboard</h1>
-      <ul>
-        {contacts.map((contact) => (
-          <li key={contact.id}>contact.name</li>
-        ))}
-      </ul>
+      <Container>
+        <header>
+          <h2>DashBoard</h2>
+        </header>
+        
+        <main>
+          <Card/>
+        </main>
+      </Container>
     </>
   );
 };
 
-export default Dashboard;
+

@@ -2,8 +2,8 @@ import { createGlobalStyle } from "styled-components";
 
 export default createGlobalStyle`
     :root {
-      --brand1: #6100AB;
-      --brand2: #7D82F1;
+      --brand1: #6351CD;
+      --brand2: #C7BFF6;
       --brand3: #BEC1F8;
       --brand4: #E7E8FC;
       --grey1: #212529;
@@ -12,7 +12,8 @@ export default createGlobalStyle`
       --grey4: #F1F3F5;
       --grey5: #F8F9FA;
       --grey6: #DEE0FB;
-
+      --background: #D9D9D9;
+        
       font-size: 60%
     }
 
@@ -36,8 +37,8 @@ export default createGlobalStyle`
     }
 
     body {
-        background: var(--brand1);
         color: var(--grey5);
+        background-color: #D9D9D9;
         -webkit-font-smoothing: antialiased;
         overflow-x: hidden;
     }
