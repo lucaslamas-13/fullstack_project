@@ -22,7 +22,7 @@ export const ModalAddTask = ({
     criteriaMode: "all",
   });
 
-  const createTaskToDo = async (data: ContactData) => {
+  const createContacts = async (data: ContactData) => {
     const response = await api.post<Contact>("/contacts", data);
 
     setContacts((previusContacts) => [response.data, ...previusContacts]);
@@ -30,7 +30,7 @@ export const ModalAddTask = ({
 
   return (
     <Modal toggleModal={toggleModal}>
-      <form onSubmit={handleSubmit(createTaskToDo)}>
+      <form onSubmit={handleSubmit(createContacts)}>
         <label htmlFor="name" placeholder="Digite o nome aqui">
           Nome
         </label>

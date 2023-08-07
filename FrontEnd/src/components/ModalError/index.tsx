@@ -10,7 +10,7 @@ export const ModalErrorTask = ({ toggleModal }: ModalErrorProps) => {
 
   const handleCloseAndRedirect = () => {
     toggleModal()
-    navigate("/")
+    navigate("/login")
   }
 
   return (
